@@ -1,16 +1,72 @@
-let name = prompt("please enter your name:")
-let value = prompt("please enter your membership type: student/regular")
-let typebook = prompt("please enter your type book: fiction /non-fiction ")
-let titlebook = prompt("please enter specific title of the book")
+let name = prompt("please enter your name:");
 
-if (value === "student") {
-    value="Scholar"
-    alert("your book are reserved")
-    alert(`Name: ${name} \n Membership:${value} \n TitleBook:${titlebook}`)
-} else if (value === "regular") {
-    value="Member"
-    alert("your book are reserved")
-   alert(`Name: ${name} \n Membership:${value} \n TitleBook:${titlebook}`)
-} else {
-    alert(`Hi ${name} \n welcome to the website`)
+function handlemembershiptype() {
+
+    let membership = prompt("please enter your membership type: student/regular");
+
+    while (membership != "student" && membership != "regular") {
+
+        membership = prompt("please enter your membership type: student/regular");
+
+    }
+    return membership;
 }
+
+function collectalluserdata() {
+
+    let membership = handlemembershiptype();
+
+    let typebook = prompt("please enter your type book: fiction /non-fiction ");
+
+    let titlebook = prompt("please enter specific title of the book");
+
+    let sum = [name, membership, typebook, titlebook];
+
+    // for (let i = 0; i < sum.length; i++) {
+
+    //     console.log(sum[i])
+    // }
+    return sum;
+}
+
+
+let userData = collectalluserdata();
+let availableGenres = ["Fiction", "Science", "history", "Biography"];
+
+function applyDiscount(userData) {
+
+    if (userData[1] === "student") {
+        userData.push("20% Discount");
+    } else if (userData[1] === "regular") {
+        userData.push("No Discount")
+
+    }
+    return userData;
+}
+// Add a new genre
+function addNewGenre(genre) {
+
+    availableGenres.push(genre);
+}
+
+// Display all genres
+function displayGenres() {
+
+    for (let i = 0; i < availableGenres.length; i++) {
+
+        console.log(`- We offer: ${availableGenres[i]}`);
+    }
+}
+
+
+
+applyDiscount(userData);
+
+
+addNewGenre("Technology");
+
+
+displayGenres();
+
+
+console.log(userData);
