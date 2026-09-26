@@ -1,0 +1,31 @@
+body {
+    background-color: rgba(128, 128, 128, 0.484);
+}
+
+#text {
+    background-color: cyan;
+    color:darkred;
+    font-size: 47px;
+    font-family: Georgia;
+    text-align: center;
+    border: 2px solid black;
+    height: 200px;
+    border-radius: 10px;
+}
+
+#buttons {
+    background-color: white;
+     height: 300px;
+     border-radius: 10px;
+     margin-top: 20px;
+}
+
+#buttons > button {
+    color: white;
+    padding: 15px;
+    background-color: blue;
+    border: none;
+    margin: 20px;
+    border-radius: 10px;
+}
+
